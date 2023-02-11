@@ -2,4 +2,16 @@
 
 {% block content %}
     
-{% endblock content %}
+    {% for book in books %}
+                
+    <p>Name: {{book.name}}</p>
+    <p>Author: {{book.author}}</p>
+    <p>Genre: {{book.genre}}</p>
+    <p>First Published: {{book.published_date.strftime('%d-%m-%Y')}}</p>
+    <p>Status: {{book.status}}</p>  
+                
+            
+    {% endfor %}
+        
+ 
+{% endblock %}
