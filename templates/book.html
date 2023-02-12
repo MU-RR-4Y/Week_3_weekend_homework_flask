@@ -6,33 +6,26 @@
     <p>Author: {{book.author}}</p>
     <p>Genre: {{book.genre}}</p>
     <p>First Published: {{book.published_date.strftime('%d-%m-%Y')}}</p>
+    
     {% if book.status == False %}
-        <p>Available &#x1f4d5;</p>
-    {%else%}
-        {% if book.reserved == False %}
-        <p>Checked out &#128214;</p> 
-        {% else %}
-            <p>Reserved &#8987;</p>  
-        {% endif %}
-
-    {% endif %}
-    {% if book.status == False %}
-        
-    <form action="/change_status/{{book.name}}" method="post">
+        <p>Status: Available &#x1f4d5;</p>
+        <form action="/change_status/{{book.name}}" method="post">
             <label for="checked out">Check out</label>
             <input type="radio" id="checked out" name="checked out">
             <input type="submit">
-    </form>
-    {% endif %}
-    
-    {% if book.status == True %}
-    
-    <form action="/reserve/{{book.name}}" method="post">
-    <input type="submit" value="Reserve">
-    </form>
-    {% endif %} 
+        </form>
+    {%else%}
+        {% if book.reserved == False %}
+        <p>Status: Checked out &#128214;</p> 
+        <form action="/reserve/{{book.name}}" method="post">
+            <input type="submit" value="Reserve">
+        </form>
+        {% else %}
+            <p> Status: Reserved &#8987;</p>  
+        {% endif %}
 
- 
+    {% endif %}
+     
 
     <form action="/remove/{{book.name}}" method="post">
         <input type="submit" value = 'Remove book'>
