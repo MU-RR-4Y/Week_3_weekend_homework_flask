@@ -9,3 +9,10 @@ from models.library_books import *
 def index():
     return render_template('index.html', title ='Home', books = book_list)
 
+@app.route('/book/<index>')
+def individual_book(index):
+    book_selected = book_list[int(index)]
+    return render_template('book.html', title = book_selected.name, book = book_selected)
+   
+
+

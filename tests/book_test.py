@@ -4,6 +4,7 @@ import datetime
 from models.book import Book
 
 
+
 class TestBook(unittest.TestCase):
     def setUp(self):
         self.book_1=Book('The Godfather', 'Mario Puzo','Crime',datetime.date(1969,3,10),False)

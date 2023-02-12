@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+    <h2>Books</h2>
+    <ul>
     {% for book in books %}
-                
-    <p>Name: {{book.name}}</p>
-    <p>Author: {{book.author}}</p>
-    <p>Genre: {{book.genre}}</p>
-    <p>First Published: {{book.published_date.strftime('%d-%m-%Y')}}</p>
-    <p>Status: {{book.status}}</p>  
-                
+       <li>       
+            <p>{{book.name}} by {{book.author}}</p>
+            <form action="/book/{{loop.index0}}">
+                <input type="submit" value="more details">
+            </form>
+       </li>          
             
     {% endfor %}
-        
+    </ul>    
  
 {% endblock %}
+

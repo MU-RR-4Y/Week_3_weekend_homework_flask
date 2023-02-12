@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>{{book.name}}</h2>
+    <p>Author: {{book.author}}</p>
+    <p>Genre: {{book.genre}}</p>
+    <p>First Published: {{book.published_date.strftime('%d-%m-%Y')}}</p>
+    <p>Status: {{book.status}}</p>  
+
+    
+{% endblock content %}
