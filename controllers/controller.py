@@ -14,6 +14,8 @@ def individual_book(index):
     book_selected = book_list[int(index)]
     return render_template('book.html', title = book_selected.name, book = book_selected)
 
+
+
 @app.route('/', methods =['POST'])
 def add_new_book():
     name = request.form['name']
@@ -27,10 +29,16 @@ def add_new_book():
 
     return redirect('/')
 
-@app.route('/remove/<name>', methods=['POST'])
-def remove_existing_book(name):
-    remove_book(name)
+
+
+
+@app.route('/remove/<index>', methods=['POST'])
+def remove_existing_book(index):
+    remove_book(index)
     return redirect('/')
+
+
+
 
 @app.route('/change_status/<name>', methods=['POST'])
 def update_book_status(name):
@@ -41,6 +49,8 @@ def update_book_status(name):
             break
     book.change_status()
     return redirect('/')
+
+
 
 
 @app.route('/reserve/<name>',methods=['POST'])

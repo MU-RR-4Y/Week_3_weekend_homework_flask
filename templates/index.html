@@ -2,16 +2,25 @@
 
 {% block content %}
     <h2>Books</h2>
+
+     <!-- list of exitsing books, includes remove book option and a button to take to individual book page.-->
+
     <ul>
     {% for book in books %}
        <li>       
             <p>{{book.name}} by {{book.author}}</p>
             <form action="/book/{{loop.index0}}">
-                <input type="submit" value="more details">
+                <input type="submit" value="Details">
+            </form>
+            <form action="/remove/{{loop.index0}}" method="post">
+                <input type="submit" value = 'Remove book'>
             </form>
        </li>          
             
     {% endfor %}
+
+       <!-- form to add a new book -->
+
     </ul>    
 
     <form action="/" method="post">

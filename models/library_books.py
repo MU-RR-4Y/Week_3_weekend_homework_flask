@@ -11,10 +11,5 @@ book_list = [book_1, book_2, book_3, book_4]
 def add_book(book):
     book_list.append(book)
 
-def remove_book(book_removed):
-    book_removed = None
-    for book in book_list:
-        if book.name == book_removed:
-            book_removed = book
-            break
-    book_list.remove(book)
+def remove_book(index):
+    book_list.pop(int(index))
