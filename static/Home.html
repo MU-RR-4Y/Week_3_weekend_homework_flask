@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5001/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Home_files/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <h1>My Library</h1>
+        <nav>
+            <ul>
+                <li><a class="menu_link" href="http://127.0.0.1:5001/">Home</a></li>
+                <li><a class="menu_link" href="http://127.0.0.1:5001/">Search</a></li>
+                <li><a class="menu_link" href="http://127.0.0.1:5001/">Request a Book</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+<div class="main_list">
+
+    <h2>Books</h2>
+    
+    <!-- list of exitsing books, includes remove book option and a button to take to individual book page.-->
+    
+    <ul>
+        
+        <li>       
+            <p>The Godfather by Mario Puzo</p>
+            <form action="http://127.0.0.1:5001/book/0">
+                <input type="submit" value="Details">
+            </form>
+            <form action="http://127.0.0.1:5001/remove/0" method="post">
+                <input type="submit" value="Remove book">
+            </form>
+        </li>          
+        
+        
+        <li>       
+            <p>Nineteen Eighty-Four by George Orwell</p>
+            <form action="http://127.0.0.1:5001/book/1">
+                <input type="submit" value="Details">
+            </form>
+            <form action="http://127.0.0.1:5001/remove/1" method="post">
+                <input type="submit" value="Remove book">
+            </form>
+        </li>          
+        
+        
+        <li>       
+            <p>The Eye of the World by Robert Jordan</p>
+            <form action="http://127.0.0.1:5001/book/2">
+                <input type="submit" value="Details">
+            </form>
+            <form action="http://127.0.0.1:5001/remove/2" method="post">
+                <input type="submit" value="Remove book">
+            </form>
+        </li>          
+        
+        
+        <li>       
+            <p>A Game of Thrones by George R. R. Martin</p>
+            <form action="http://127.0.0.1:5001/book/3">
+                <input type="submit" value="Details">
+            </form>
+            <form action="http://127.0.0.1:5001/remove/3" method="post">
+                <input type="submit" value="Remove book">
+            </form>
+        </li>          
+        
+        
+        
+        <!-- form to add a new book -->
+        
+    </ul>    
+    
+    <form action="http://127.0.0.1:5001/" method="post">
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="author">Author: </label>
+            <input type="text" name="author" id="author">
+        </div>
+        <div>
+            <label for="genre">Genre: </label>
+            <input type="text" name="genre" id="genre">
+        </div>
+        <div>
+            <label for="published_date">Date Published</label>
+            <input type="date" name="published_date" id="published_date">
+        </div>
+        <div>
+            <input type="submit" value="Add book">
+        </div>    
+        
+    </form>
+    
+    
+</div>
+    
+    
+        
+    </main>
+    <footer>
+
+        
+
+    </footer>
+
+</body></html>
