@@ -40,4 +40,14 @@ class TestBook(unittest.TestCase):
         self.assertEqual(True,self.book_1.status)
         self.assertEqual(False,book_5.status)
 
+    def test_book_reserved_status(self):
+        self.assertEqual(False, self.book_1.reserved)
+
+    def test_book_change_reserved_status(self):
+        book_5 =Book("Harry Potter and the Philospher's Stone",'J.K. Rowling','Fantasy',datetime.date(1997,6,26))
+        book_5.reserved = True
+        self.book_1.reserved_status()
+        book_5.reserved_status()
+        self.assertEqual(True, self.book_1.reserved)
+        self.assertEqual(False, book_5.reserved)
 
