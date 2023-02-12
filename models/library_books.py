@@ -12,7 +12,9 @@ def add_book(book):
     book_list.append(book)
 
 def remove_book(book_removed):
+    book_removed = None
     for book in book_list:
-        if book.name == book_removed.name:
-            book_list.pop(book_list.index(book))
-    
+        if book.name == book_removed:
+            book_removed = book
+            break
+    book_list.remove(book)

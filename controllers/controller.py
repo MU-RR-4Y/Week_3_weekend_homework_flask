@@ -2,7 +2,7 @@ from flask import render_template, redirect, request
 import datetime
 
 from app import app
-from models.book import Book
+from models.book import *
 from models.library_books import *
 
 @app.route('/')
@@ -26,6 +26,33 @@ def add_new_book():
     add_book(book_added)
 
     return redirect('/')
+
+@app.route('/remove/<name>', methods=['POST'])
+def remove_existing_book(name):
+    remove_book(name)
+    return redirect('/')
+
+@app.route('/change_status/<name>', methods=['POST'])
+def update_book_status(name):
+    book_updated = None
+    for book in book_list:
+        if book.name == name:
+            book_updated = book
+            break
+    book.change_status()
+    return redirect('/')
+
+
+@app.route('/reserve/<name>',methods=['POST'])
+def reserve_book(name):
+    book_reserved = None
+    for book in book_list:
+        if book.name == name:
+            book_reserved = book
+            break
+    book.reserved_status()
+    return redirect('/')
+
    
 
 
